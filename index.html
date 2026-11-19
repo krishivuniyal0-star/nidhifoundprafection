@@ -15,7 +15,7 @@
 <link rel="preload" as="font" href="fonts/SloopScript.woff2" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Pinyon+Script&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&family=Pinyon+Script&family=Roboto:wght@500&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:"sloopScript";src:url(fonts/SloopScript.woff2) format("woff2");font-display:swap}
 
@@ -72,6 +72,25 @@ main{position:relative;min-height:100vh;background:#000;color:#1f2937;overflow-x
 .ov.rest .box{margin-top:48px}
 .ov img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;color:transparent}
 .ov.rest img{transform:scale(1.1)}
+
+/* events at a glance – styled like the event cards */
+.pg.sum{height:auto;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:calc(5vh + 52px) 16px 28px}
+.sum-wrap{position:relative;z-index:10;width:100%;max-width:440px}
+.sum-card{background:rgba(241,232,223,.72);border-radius:20px;padding:22px 20px 16px;text-align:center;color:rgb(12,49,16);font-variant-numeric:lining-nums;
+  backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.sum-card h2{font-family:var(--pinyon);font-weight:400;font-size:clamp(36px,10.5vw,46px);line-height:1.15;color:rgb(164,56,63);text-shadow:0 2px 6px rgba(164,56,63,.18)}
+.sum-card .sub{font-size:14px;font-weight:600;letter-spacing:.04em;margin-top:2px}
+.sum-card .day{margin-top:12px}
+.sum-card .dh{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin-bottom:4px}
+.sum-card .dh span{font-family:"Cinzel",serif;font-weight:600;font-size:11px;letter-spacing:.24em;text-transform:uppercase;border-top:1.5px solid currentColor;border-bottom:1.5px solid currentColor;padding:4px 0 3px}
+.sum-card .dh b{font-family:"Cinzel",serif;font-weight:600;font-size:28px;line-height:1}
+.sum-card .ev{display:grid;grid-template-columns:72px 1fr;gap:10px;align-items:baseline;text-align:left;padding:5px 4px;border-radius:8px;transition:background-color .25s}
+.sum-card .ev:hover,.sum-card .ev:active{background:rgba(164,56,63,.07)}
+.sum-card .ev+.ev{border-top:1px dashed rgba(12,49,16,.18)}
+.sum-card time{font-weight:700;font-size:14.5px;text-align:right;white-space:nowrap}
+.sum-card .ev b{display:block;font-weight:600;font-size:18px;line-height:1.15;color:rgb(164,56,63)}
+.sum-card .ev i{display:block;font-style:italic;font-weight:500;font-size:14px;line-height:1.25}
+@media (max-height:740px){.sum-card .ev{padding:3px 4px}.sum-card .day{margin-top:8px}}
 
 /* reveal (mirrors framer-motion whileInView) */
 .rv{opacity:0}
@@ -219,7 +238,37 @@ main{position:relative;min-height:100vh;background:#000;color:#1f2937;overflow-x
     <div class="ov rest rv up30"><div class="box"><img src="3.1.png" alt="Invitation from the Mittal family" loading="lazy" decoding="async"></div></div>
   </div></div>
 
-  <div id="events"><div class="pg">
+  <!-- ============ EVENTS AT A GLANCE ============ -->
+  <div id="events"><div class="pg sum">
+    <video data-src="2v.mp4" loop muted playsinline preload="none"></video>
+    <div class="sum-wrap rv up30">
+      <div class="sum-card">
+        <h2>The Celebrations</h2>
+        <p class="sub">Ananta Spa &amp; Resort, Jaipur</p>
+        <div class="day">
+          <div class="dh"><span>Friday</span><b>04</b><span>Dec</span></div>
+          <a class="ev" href="#page-4"><time>7:00 PM</time><span><b>Pakeezah</b><i>Mehendi · New Ballroom Banquet</i></span></a>
+        </div>
+        <div class="day">
+          <div class="dh"><span>Saturday</span><b>05</b><span>Dec</span></div>
+          <a class="ev" href="#page-5"><time>11:00 AM</time><span><b>Turmeric Tales</b><i>Haldi · Ikigai Lawn</i></span></a>
+          <a class="ev" href="#page-6"><time>5:00 PM</time><span><b>Godh Teeka</b><i>Suijin Lawn</i></span></a>
+          <a class="ev" href="#page-6"><time>7:00 PM</time><span><b>Glitter Gala</b><i>Sangeet · Suijin Lawn</i></span></a>
+          <a class="ev" href="#page-7"><time>11:00 PM</time><span><b>Last Ones Standing</b><i>New Ballroom Banquet</i></span></a>
+        </div>
+        <div class="day">
+          <div class="dh"><span>Sunday</span><b>06</b><span>Dec</span></div>
+          <a class="ev" href="#page-8"><time>11:00 AM</time><span><b>Nani Ka Aangan</b><i>Bhaat · Sakura Banquet</i></span></a>
+          <a class="ev" href="#page-9"><time>5:00 PM</time><span><b>Shahi Safa</b><i>Sehra Bandhi · Temple Dome</i></span></a>
+          <a class="ev" href="#page-9"><time>7:00 PM</time><span><b>Desaan Da Raaja</b><i>Grand Baraat · Main Porch</i></span></a>
+          <a class="ev" href="#page-10"><time>9:00 PM</time><span><b>A Garland of Lifetime</b><i>Varmala · Ikigai Lawn</i></span></a>
+          <a class="ev" href="#page-10"><time>11:00 PM</time><span><b>The Seven Circles</b><i>Pheras · Ikigai Lawn</i></span></a>
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+  <div id="page-4"><div class="pg">
     <video data-src="4v.mp4" loop muted playsinline preload="none"></video>
     <div class="ov rest rv up30"><div class="box"><img src="4.1.png" alt="Pakeezah · Ivory Wings Mehendi · Friday 04 Dec" loading="lazy" decoding="async"></div></div>
   </div></div>
