@@ -134,7 +134,9 @@ button{font:inherit;color:inherit}
 .fig:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-120%);pointer-events:none}
 .fn.in .fig:after{animation:sweep 2.2s .5s ease forwards}
 @keyframes sweep{to{transform:translateX(120%)}}
-.body{padding:4px 24px 28px;text-align:center;position:relative;margin-top:-6px}
+.body{padding:22px 24px 28px;text-align:center;position:relative;z-index:3;margin-top:-6px;transform:translateZ(1px)}
+.fig{z-index:1}
+.body h3{padding-top:.08em}
 .body h3{font-family:var(--display);font-weight:400;font-size:clamp(42px,11vw,54px);line-height:1.05;color:var(--maroon)}
 .body .sub{font-family:var(--caps);font-weight:600;font-size:12px;letter-spacing:.22em;color:var(--green);margin-top:4px}
 .date{display:flex;align-items:center;justify-content:center;gap:8px;font-size:17px;margin-top:14px}
